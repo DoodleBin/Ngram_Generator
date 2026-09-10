@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <stdbool.h>
 
 int main(int argc, char** argv) {
   // Make sure the user provided an N parameter on the command line
@@ -24,7 +23,6 @@ int main(int argc, char** argv) {
   int c;
   int stringIndex = 0;
   int currentWindow[N];
-  bool hasPrinted = false;
 
   while ((c = fgetc(stdin)) != EOF) {
     int currIndex = stringIndex % N;
@@ -42,14 +40,9 @@ int main(int argc, char** argv) {
         printf("%c", currentWindow[idx]);
       }
       printf("\n");
-      hasPrinted = true;
     }
     
     stringIndex++;
-  }
-
-  if (hasPrinted == false) {
-    return 0;
   }
 
   return 0;
